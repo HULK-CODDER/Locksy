@@ -1,0 +1,22 @@
+@import "tailwindcss";
+
+
+@layer components{
+    .navbaratag{
+        @apply capitalize bg-[#1f034e] py-2 rounded-2xl px-3 text-xl text-[#6b48f9] text-shadow-2xs text-shadow-indigo-200 hover:scale-105 cursor-pointer active:scale-95
+    }
+    .footer_style{
+        @apply h-[9vh] w-screen text-5xl bg-[#7e05ec] flex justify-center items-center text-[#e47bf7] gap-5
+    }
+    .button_add{
+        @apply  flex items-center border border-[#2f0bef] justify-around w-fit px-2 py-1 rounded-2xl hover:scale-105 active:scale-95 cursor-pointer self-end
+    }
+      .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+}
