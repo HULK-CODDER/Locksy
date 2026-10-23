@@ -2,7 +2,7 @@ import React, { useEffect, useRef, useState } from 'react'
 import { v4 as uuidv4 } from 'uuid';
 
 const Manager = () => {
-  const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:3000';
+  const API_URL = import.meta.env.VITE_API_URL;
   const ref = useRef()
   const passref = useRef()
   const [save, setsave] = useState("Save")
