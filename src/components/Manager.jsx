@@ -120,7 +120,7 @@ const Manager = () => {
             <img ref={ref} className='absolute right-3 top-2 w-7.5 mix-blend-darken contrast-125 cursor-pointer' src="../show.gif" onClick={showpassword} alt="" />
           </span>
         </div>
-        <button onClick={savepassword} className='button_add'><img className=' mix-blend-darken contrast-125 w-10' src="../add.gif" alt="" />{save}</button>
+        <button onClick={savepassword} className='button_add mix-blend-darken contrast-125'><img className=' mix-blend-darken contrast-125 w-10' src="../add.gif" alt="" />{save}</button>
       </div>
 
       <div className="passwordtable mt-3 h-[30vh] overflow-auto scrollbar-hide w-screen flex justify-center items-start relative">
