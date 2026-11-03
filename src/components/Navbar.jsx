@@ -15,7 +15,7 @@ const Navbar = () => {
           <span className='text-[#2f0bef]'>&gt;</span>
         </h1>
 
-        <ul className='flex justify-around items-center gap-4 sm:gap-2.5 h-full'>
+        <ul className='flex justify-around items-center gap-4 sm:gap-0.5 h-full'>
             <Link className='navbaratag' to="/">home</Link>
             <Link className='navbaratag' to="/contact">contact</Link>
             <Link className='navbaratag' to="/about">about</Link>
