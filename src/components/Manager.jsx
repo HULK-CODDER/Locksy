@@ -190,7 +190,7 @@ const Manager = () => {
                       <tr key={items.id} className="hover:bg-[#cac5ef]/20 transition-colors">
                         <td className="p-3.5 sm:p-4 relative pr-12 max-w-[100px] sm:max-w-xs truncate">
                           <a 
-                            className="hover:underline text-blue-900 font-medium truncate block" 
+                            className="hover:underline text-blue-900 font-medium truncate block w-3/4" 
                             href={items.site.startsWith('http') ? items.site : `https://${items.site}`} 
                             target='_blank' 
                             rel='noreferrer'
