@@ -16,8 +16,8 @@ const Navbar = () => {
 
         <ul className='flex justify-around items-center w-[18vw] h-full gap-2.5'>
             <a className='navbaratag' href="/">home</a>
-            <a className='navbaratag' href="/">contact</a>
-            <a className='navbaratag' href="/">about</a>
+            <a className='navbaratag' href="/contact">contact</a>
+            <a className='navbaratag' href="/about">about</a>
         </ul>
     </nav>
   )
