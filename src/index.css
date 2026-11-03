@@ -2,9 +2,9 @@
 
 
 @layer components{
-    .navbaratag{
-        @apply capitalize bg-[#1f034e] py-2 rounded-2xl px-3 text-xl text-[#6b48f9] text-shadow-2xs text-shadow-indigo-200 hover:scale-105 cursor-pointer active:scale-95
-    }
+    .navbaratag {
+    @apply capitalize bg-[#1f034e] py-1.5 px-2.5 text-sm sm:py-2 sm:px-4 sm:text-xl text-[#6b48f9] text-shadow-2xs text-shadow-indigo-200 hover:scale-105 cursor-pointer active:scale-95 transition-transform duration-200 ease-in-out whitespace-nowrap;
+}
     .footer_style{
         @apply h-[9vh] w-screen text-5xl bg-[#7e05ec] flex justify-center items-center text-[#e47bf7] gap-5
     }
