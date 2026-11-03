@@ -21,7 +21,7 @@ const Contact = () => {
   };
 
   return (
-    <div className="flex flex-col items-center justify-center min-h-[85vh] bg-slate-50 px-6 py-10">
+    <div className="flex flex-col items-center justify-center min-h-[85vh] bg-slate-50 px-6 py-5">
       {/* Brand Header */}
       <h1 className="text-4xl font-bold text-[#92c6f9]">
         <span className="text-[#2f0bef]">&lt;</span>
