@@ -3,12 +3,10 @@ import { Link } from 'react-router-dom'
 
 const Navbar = () => {
   return (
-    <nav className='h-[9vh] w-full px-4 sm:px-8 flex justify-between sm:justify-around items-center bg-[hsl(219.38deg,33.33%,62.35%)] shadow-md'>
-        {/* Logo */}
-        <img className='w-8 sm:w-10 md:w-[4vw] hover:scale-105 transition-transform object-contain' src="../favicon.png" alt="logo" />
+    <nav className='h-[9vh] w-full px-4 sm:w-[99vw] sm:px-0 flex justify-between sm:justify-around items-center bg-[hsl(219.38deg 33.33% 62.35%)]'>
+        <img className='w-8 sm:w-[4vw] hover:scale-105 object-contain' src="../favicon.png" alt="logo" />
 
-        {/* Brand Title */}
-        <h1 className='text-2xl sm:text-3xl md:text-4xl font-bold text-[#92c6f9]'>
+        <h1 className='text-3xl sm:text-4xl font-bold text-[#92c6f9]'>
           <span className='text-[#2f0bef]'>&lt;</span>
           <span>Lock</span>
           <span className='text-[#2f0bef]'>s</span>
@@ -17,11 +15,10 @@ const Navbar = () => {
           <span className='text-[#2f0bef]'>&gt;</span>
         </h1>
 
-        {/* Navigation Links */}
-        <ul className='flex justify-around items-center gap-3 sm:gap-6 h-full text-sm sm:text-base'>
-            <Link className='navbaratag font-medium hover:text-[#2f0bef] transition-colors' to="/">home</Link>
-            <Link className='navbaratag font-medium hover:text-[#2f0bef] transition-colors' to="/contact">contact</Link>
-            <Link className='navbaratag font-medium hover:text-[#2f0bef] transition-colors' to="/about">about</Link>
+        <ul className='flex justify-around items-center gap-4 sm:gap-2.5 h-full'>
+            <Link className='navbaratag' to="/">home</Link>
+            <Link className='navbaratag' to="/contact">contact</Link>
+            <Link className='navbaratag' to="/about">about</Link>
         </ul>
     </nav>
   )
