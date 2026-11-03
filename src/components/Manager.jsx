@@ -143,7 +143,10 @@ const Manager = () => {
                     <img onClick={() => copytext(items.site)} className='w-8 mix-blend-darken contrast-125 absolute top-[25%] cursor-pointer active:scale-85 right-5' src="../copy.gif" alt="" />
                   </td>
                   <td className="p-3 border relative">{items.name} <img onClick={() => copytext(items.name)} className='mix-blend-darken contrast-125 w-8 absolute top-[25%] cursor-pointer active:scale-85 right-5' src="../copy.gif" alt="" /></td>
-                  <td className="p-3 border relative">{items.pass} <img onClick={() => copytext(items.pass)} className='mix-blend-darken contrast-125 w-8 absolute top-[25%] cursor-pointer active:scale-85 right-5' src="../copy.gif" alt="" /></td>
+                 <td className="p-3 border relative">
+                    {"•".repeat(items.pass.length)} 
+                    <img onClick={() => copytext(items.pass)} className='mix-blend-darken contrast-125 w-8 absolute top-[25%] cursor-pointer active:scale-85 right-5' src="../copy.gif" alt="" />
+                  </td>
                   <td className="p-3 border relative">
                     <span className='w-full flex items-center justify-end gap-3 pr-3'>
                       <img onClick={() => { deletepassword(items.id) }} className='w-8 cursor-pointer active:scale-90 mix-blend-darken contrast-125' src="../delete.gif" alt="" />
