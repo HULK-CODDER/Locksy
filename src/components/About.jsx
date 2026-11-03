@@ -2,7 +2,7 @@ import React from 'react';
 
 const About = () => {
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen bg-slate-50 px-6 py-5">
+    <div className="flex flex-col items-center min-h-screen bg-slate-50 px-6 py-5">
       {/* Header / Brand Logo */}
       <h1 className="text-5xl font-bold text-[#92c6f9]">
         <span className="text-[#2f0bef]">&lt;</span>
