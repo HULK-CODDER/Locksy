@@ -117,7 +117,7 @@ const Manager = () => {
           <input value={form.name} onChange={handlechange} className='border-3 border-[#6193c5] mr-2 rounded-2xl p-2' type="text" name='name' placeholder='username' />
           <input ref={passref} value={form.pass} onChange={handlechange} className='border-3 border-[#6193c5] ml-2 rounded-2xl p-2' type="password" name='pass' placeholder='password' />
           <span>
-            <img ref={ref} className='absolute right-3 top-2 w-7.5 cursor-pointer' src="../show.gif" onClick={showpassword} alt="" />
+            <img ref={ref} className='absolute right-3 top-2 w-7.5 mix-blend-darken cursor-pointer' src="../show.gif" onClick={showpassword} alt="" />
           </span>
         </div>
         <button onClick={savepassword} className='button_add'><img className='w-10' src="../add.gif" alt="" />{save}</button>
@@ -140,14 +140,14 @@ const Manager = () => {
                 return <tr key={items.id} className="border-b border-gray-200">
                   <td className="p-3 border relative">
                     <a href={items.site.startsWith('http') ? items.site : `https://${items.site}`} target='_blank' rel='noreferrer'>{items.site}</a>
-                    <img onClick={() => copytext(items.site)} className='w-8 absolute top-[25%] cursor-pointer active:scale-85 right-5' src="../copy.gif" alt="" />
+                    <img onClick={() => copytext(items.site)} className='w-8 mix-blend-darken absolute top-[25%] cursor-pointer active:scale-85 right-5' src="../copy.gif" alt="" />
                   </td>
-                  <td className="p-3 border relative">{items.name} <img onClick={() => copytext(items.name)} className='w-8 absolute top-[25%] cursor-pointer active:scale-85 right-5' src="../copy.gif" alt="" /></td>
-                  <td className="p-3 border relative">{items.pass} <img onClick={() => copytext(items.pass)} className='w-8 absolute top-[25%] cursor-pointer active:scale-85 right-5' src="../copy.gif" alt="" /></td>
+                  <td className="p-3 border relative">{items.name} <img onClick={() => copytext(items.name)} className='mix-blend-darken w-8 absolute top-[25%] cursor-pointer active:scale-85 right-5' src="../copy.gif" alt="" /></td>
+                  <td className="p-3 border relative">{items.pass} <img onClick={() => copytext(items.pass)} className='mix-blend-darken w-8 absolute top-[25%] cursor-pointer active:scale-85 right-5' src="../copy.gif" alt="" /></td>
                   <td className="p-3 border relative">
                     <span className='w-full flex items-center justify-end gap-3 pr-3'>
-                      <img onClick={() => { deletepassword(items.id) }} className='w-8 cursor-pointer active:scale-90' src="../delete.gif" alt="" />
-                      <img onClick={() => { editpassword(items.id) }} className='w-8 cursor-pointer active:scale-90' src="../edit.gif" alt="" />
+                      <img onClick={() => { deletepassword(items.id) }} className='w-8 cursor-pointer active:scale-90 mix-blend-darken' src="../delete.gif" alt="" />
+                      <img onClick={() => { editpassword(items.id) }} className='w-8 cursor-pointer active:scale-90 mix-blend-darken' src="../edit.gif" alt="" />
                     </span>
                   </td>
                 </tr>
