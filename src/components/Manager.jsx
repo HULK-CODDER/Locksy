@@ -100,8 +100,8 @@ const Manager = () => {
   };
 
   return (
-    <div className='flex justify-center items-center flex-col w-screen'>
-      <h1 className='text-5xl font-bold text-[#92c6f9] mt-10'>
+    <div className='flex justify-center items-center flex-col w-full px-4 max-w-6xl mx-auto'>
+      <h1 className='text-3xl sm:text-5xl font-bold text-[#92c6f9] mt-6 sm:mt-10 text-center'>
         <span className='text-[#2f0bef]'>&lt;</span>
         <span>Lock</span>
         <span className='text-[#2f0bef]'>s</span>
@@ -109,48 +109,91 @@ const Manager = () => {
         <span className='text-[#2f0bef]'>/</span>
         <span className='text-[#2f0bef]'>&gt;</span>
       </h1>
-      <p className='text-black mt-2'>Manage your own passwords</p>
+      <p className='text-black mt-2 text-sm sm:text-base text-center'>Manage your own passwords</p>
 
-      <div className='mt-4 flex flex-col gap-2.5 p-5'>
-        <input value={form.site} onChange={handlechange} className='w-full border-2 border-[#7e05ec] p-3 rounded-2xl' type="text" name='site' placeholder='URL' />
-        <div className='relative'>
-          <input value={form.name} onChange={handlechange} className='border-3 border-[#6193c5] mr-2 rounded-2xl p-2' type="text" name='name' placeholder='username' />
-          <input ref={passref} value={form.pass} onChange={handlechange} className='border-3 border-[#6193c5] ml-2 rounded-2xl p-2' type="password" name='pass' placeholder='password' />
-          <span>
-            <img ref={ref} className='absolute right-3 top-2 w-7.5 mix-blend-darken contrast-125 cursor-pointer' src="../show.gif" onClick={showpassword} alt="" />
-          </span>
+      {/* Input Form Section */}
+      <div className='mt-4 flex flex-col gap-3 p-4 sm:p-5 w-full max-w-xl'>
+        <input 
+          value={form.site} 
+          onChange={handlechange} 
+          className='w-full border-2 border-[#7e05ec] p-3 rounded-2xl outline-none text-sm sm:text-base' 
+          type="text" 
+          name='site' 
+          placeholder='URL' 
+        />
+        
+        <div className='flex flex-col sm:flex-row gap-3 relative'>
+          <input 
+            value={form.name} 
+            onChange={handlechange} 
+            className='w-full sm:w-1/2 border-3 border-[#6193c5] rounded-2xl p-3 outline-none text-sm sm:text-base' 
+            type="text" 
+            name='name' 
+            placeholder='username' 
+          />
+          <div className='relative w-full sm:w-1/2 flex items-center'>
+            <input 
+              ref={passref} 
+              value={form.pass} 
+              onChange={handlechange} 
+              className='w-full border-3 border-[#6193c5] rounded-2xl p-3 pr-12 outline-none text-sm sm:text-base' 
+              type="password" 
+              name='pass' 
+              placeholder='password' 
+            />
+            <span>
+              <img 
+                ref={ref} 
+                className='absolute right-3 top-3.5 w-7 mix-blend-darken contrast-125 cursor-pointer' 
+                src="../show.gif" 
+                onClick={showpassword} 
+                alt="toggle visibility" 
+              />
+            </span>
+          </div>
         </div>
-        <button onClick={savepassword} className='button_add mix-blend-darken contrast-125'><img className=' mix-blend-darken contrast-125 w-10' src="../add.gif" alt="" />{save}</button>
+
+        <button 
+          onClick={savepassword} 
+          className='button_add mix-blend-darken contrast-125 flex items-center justify-center gap-2 cursor-pointer mt-1'
+        >
+          <img className='mix-blend-darken contrast-125 w-8 sm:w-10' src="../add.gif" alt="" />
+          {save}
+        </button>
       </div>
 
-      <div className="passwordtable mt-3 h-[30vh] overflow-auto scrollbar-hide w-screen flex justify-center items-start relative">
-        {passwordarray.length === 0 && <div>No passwords are saved yet </div>}
+      {/* Password Table Section */}
+      <div className="passwordtable mt-4 h-[35vh] sm:h-[40vh] overflow-x-auto overflow-y-auto scrollbar-hide w-full flex justify-center items-start relative px-2">
+        {passwordarray.length === 0 && <div className="text-gray-600 text-sm sm:text-base">No passwords are saved yet</div>}
         {passwordarray.length !== 0 &&
-          <table className="text-left border-collapse border w-10/12">
+          <table className="text-left border-collapse border w-full min-w-[650px] text-sm sm:text-base">
             <thead>
-              <tr className="border-b border-gray-300 bg-[#7e05ec]">
+              <tr className="border-b border-gray-300 bg-[#7e05ec] text-white">
                 <th className="p-3">Site</th>
                 <th className="p-3">Username</th>
                 <th className="p-3">Password</th>
-                <th className="p-3">Actions</th>
+                <th className="p-3 text-right pr-6">Actions</th>
               </tr>
             </thead>
-            <tbody className='overflow-auto scroll h-[10vh] bg-[#cac5ef]'>
+            <tbody className='overflow-auto scroll bg-[#cac5ef]'>
               {passwordarray.map((items) => {
                 return <tr key={items.id} className="border-b border-gray-200">
-                  <td className="p-3 border relative">
-                    <a href={items.site.startsWith('http') ? items.site : `https://${items.site}`} target='_blank' rel='noreferrer'>{items.site}</a>
-                    <img onClick={() => copytext(items.site)} className='w-8 mix-blend-darken contrast-125 absolute top-[25%] cursor-pointer active:scale-85 right-5' src="../copy.gif" alt="" />
+                  <td className="p-3 border relative max-w-[150px] sm:max-w-xs truncate">
+                    <a className="hover:underline text-blue-900 font-medium" href={items.site.startsWith('http') ? items.site : `https://${items.site}`} target='_blank' rel='noreferrer'>{items.site}</a>
+                    <img onClick={() => copytext(items.site)} className='w-7 sm:w-8 mix-blend-darken contrast-125 absolute top-[25%] cursor-pointer active:scale-85 right-3' src="../copy.gif" alt="copy site" />
                   </td>
-                  <td className="p-3 border relative">{items.name} <img onClick={() => copytext(items.name)} className='mix-blend-darken contrast-125 w-8 absolute top-[25%] cursor-pointer active:scale-85 right-5' src="../copy.gif" alt="" /></td>
-                 <td className="p-3 border relative">
+                  <td className="p-3 border relative max-w-[120px] sm:max-w-xs truncate">
+                    {items.name} 
+                    <img onClick={() => copytext(items.name)} className='mix-blend-darken contrast-125 w-7 sm:w-8 absolute top-[25%] cursor-pointer active:scale-85 right-3' src="../copy.gif" alt="copy username" />
+                  </td>
+                  <td className="p-3 border relative">
                     {"•".repeat(items.pass.length)} 
-                    <img onClick={() => copytext(items.pass)} className='mix-blend-darken contrast-125 w-8 absolute top-[25%] cursor-pointer active:scale-85 right-5' src="../copy.gif" alt="" />
+                    <img onClick={() => copytext(items.pass)} className='mix-blend-darken contrast-125 w-7 sm:w-8 absolute top-[25%] cursor-pointer active:scale-85 right-3' src="../copy.gif" alt="copy password" />
                   </td>
                   <td className="p-3 border relative">
-                    <span className='w-full flex items-center justify-end gap-3 pr-3'>
-                      <img onClick={() => { deletepassword(items.id) }} className='w-8 cursor-pointer active:scale-90 mix-blend-darken contrast-125' src="../delete.gif" alt="" />
-                      <img onClick={() => { editpassword(items.id) }} className='w-8 cursor-pointer active:scale-90 mix-blend-darken contrast-125' src="../edit.gif" alt="" />
+                    <span className='w-full flex items-center justify-end gap-2 sm:gap-3 pr-2'>
+                      <img onClick={() => { deletepassword(items.id) }} className='w-7 sm:w-8 cursor-pointer active:scale-90 mix-blend-darken contrast-125' src="../delete.gif" alt="delete" />
+                      <img onClick={() => { editpassword(items.id) }} className='w-7 sm:w-8 cursor-pointer active:scale-90 mix-blend-darken contrast-125' src="../edit.gif" alt="edit" />
                     </span>
                   </td>
                 </tr>
