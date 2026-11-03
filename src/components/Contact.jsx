@@ -98,7 +98,7 @@ const Contact = () => {
 
         {/* Contact Info Footer */}
         <div className="mt-8 pt-6 border-t border-gray-100 flex flex-col sm:flex-row justify-between items-center text-sm text-gray-500 gap-2">
-          <span>📧 support@locksy.com</span>
+          <span>📧 damanstudyonly@gmail.com</span>
           <span>⚡ Fast Response Time</span>
         </div>
       </div>
